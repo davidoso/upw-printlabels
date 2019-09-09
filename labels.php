@@ -39,11 +39,13 @@ $data = $xlsx->getSheetData('Sheet1');              // NOTE: Modify this: Sheet 
   for($i = 1; $i < count($data); $i++) { // Row 0 on sheet contains column names
     $labelsNeeded = trim($data[$i][2]);
     $limit = $labelsNeeded > 1 ? $labelsNeeded : 1;
+    $url = trim($data[$i][3]);
     for($j = 0; $j < $limit; $j++) {
       echo '<tr>';
-      echo '<td><img src="sku_barcode.png" alt="SKU BARCODE NOT FOUND"></td>';
+      echo '<td><img src="sample_sku.png" alt="SKU BARCODE NOT FOUND"></td>';
       echo '<td><div class="t1">' . trim($data[$i][1]) . '</div><div class="t2">' . trim($data[$i][0]) . '</div></td>';
-      echo '<td><img src="qr.png" alt="QR BARCODE NOT FOUND"></td>';
+      echo '<td><img src="qr.php?url=' . $url . '" alt="QR CODE NOT FOUND"></td>';
+      echo '</tr>';
     }
   }
 ?>
