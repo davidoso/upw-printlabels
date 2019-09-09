@@ -39,7 +39,7 @@ $data = $xlsx->getSheetData('Sheet1');              // NOTE: Modify this: Sheet 
   for($i = 1; $i < count($data); $i++) { // Row 0 on sheet contains column names
     $labelsNeeded = trim($data[$i][2]);
     $limit = $labelsNeeded > 1 ? $labelsNeeded : 1;
-    $url = trim($data[$i][3]);
+    $url = trim($data[$i][4]);
     for($j = 0; $j < $limit; $j++) {
       echo '<tr>';
       echo '<td><img src="sample_sku.png" alt="SKU BARCODE NOT FOUND"></td>';
