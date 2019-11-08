@@ -1,7 +1,7 @@
 <?php
-require('../upwork-xls-to-mysql/XLSXReader.php');   // PHP library to fetch data from a spreadsheet
-$xlsx = new XLSXReader('Sample Data.xlsx');         // NOTE: Modify this: Excel file
-$data = $xlsx->getSheetData('Sheet1');              // NOTE: Modify this: Sheet name
+require('../upwork-xls-to-mysql/XLSXReader.php');     // PHP library to fetch data from a spreadsheet
+$xlsx = new XLSXReader('Sample Data.xlsx');           // NOTE: Modify parameter: Excel file
+$data = $xlsx->getSheetData('Sheet1');                // NOTE: Modify parameter: Sheet name
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ $data = $xlsx->getSheetData('Sheet1');              // NOTE: Modify this: Sheet 
 
 <table>
 <?php
-  for($i = 1; $i < count($data); $i++) { // Row 0 on sheet contains column names
+  for($i = 1; $i < count($data); $i++) { // First row on sheet contains column names
     $labelsNeeded = trim($data[$i][2]);
     $limit = $labelsNeeded > 1 ? $labelsNeeded : 1;
     $url = trim($data[$i][4]);
