@@ -12,6 +12,10 @@ $data = $xlsx->getSheetData('Sheet1');                // NOTE: Modify parameter:
   body {
     margin: 0;
   }
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
   tr {
     height: 23mm;
     /* padding: 0.5mm; */
