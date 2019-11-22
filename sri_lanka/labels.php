@@ -7,44 +7,49 @@ $data = $xlsx->getSheetData('Sheet1');                // NOTE: Modify parameter:
 <!DOCTYPE html>
 <html>
 <head>
-<title>Labels</title>
-<style>
-  body {
-    margin: 0;
-  }
-  table {
-    border-spacing: 0;
-    border-collapse: collapse;
-  }
-  tr {
-    height: 23mm;
-    /* padding: 0.5mm; */
-  }
-  tr td {
-    width: 45mm;
-    padding: 1mm 2mm;
-    vertical-align: text-top;
-    background-color: white;
-    /* border: 1px solid black; */
-  }
-  td div {
-    text-align: center;
-  }
-  .row-page {
-    height: 18mm;
-  }
-  .text {
-    margin-top: 0.5mm;
-    font: 2mm arial, sans-serif;
-  }
-  .barcode {
-    margin-top: 1mm;
-  }
-</style>
+  <title>Labels</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+    body {
+      margin: 0;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    tr {
+      height: 23mm;
+      /* padding: 0.5mm; */
+    }
+    tr td {
+      width: 45mm;
+      padding: 1mm 2mm;
+      vertical-align: text-top;
+      background-color: white;
+      /* border: 1px solid black; */
+    }
+    td div {
+      text-align: center;
+    }
+    .text:first-child {
+      margin-top: 0.2mm;
+      font-weight: bold;
+    }
+    .row-page {
+      height: 18mm;
+    }
+    .text {
+      margin-top: 0.5mm;
+      font: 2mm arial, sans-serif;
+    }
+    .barcode {
+      margin-top: 1mm;
+    }
+  </style>
 </head>
 <body>
-
-<table>
+<!-- <table> -->
+<table cellspacing="0" cellpadding="0">
 <?php
     $colCounter = 0;
     $rowCounter = 0;
@@ -62,7 +67,7 @@ $data = $xlsx->getSheetData('Sheet1');                // NOTE: Modify parameter:
     // https://www.ruggedtabletpc.com/barcode-generator
     // http://www.barcodegenerator.online
     $codetype = 'code39';
-    $size = '40';
+    $size = '20';
     $print_id = 'false';
     for($j = 0; $j < $limit; $j++) {
       if($colCounter == 0) {
@@ -88,6 +93,5 @@ $data = $xlsx->getSheetData('Sheet1');                // NOTE: Modify parameter:
   }
 ?>
 </table>
-
 </body>
 </html>
